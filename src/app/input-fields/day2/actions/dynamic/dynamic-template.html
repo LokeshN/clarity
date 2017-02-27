@@ -1,0 +1,9 @@
+<form>
+    <section class="form-block">
+        <div class="form-group" *ngFor="let component of components; let i = index">
+            <label for="dynamicField_{{i}}">{{component.label}}</label>
+            <dynamic-component id="dynamicField_{{i}}" [dataType]="component.dataType">
+            </dynamic-component>
+        </div>
+    </section>
+</form>

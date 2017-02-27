@@ -13,4 +13,6 @@ import {Component} from "@angular/core";
     templateUrl: "./input-fields.demo.html"
 })
 export class InputFieldsDemo {
+    opened: boolean = false;
+    actionType: string = "SCALE_IN";
 }

@@ -4,7 +4,7 @@
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
 
-<form>
+<!--form>
     <section class="form-block">
         <label>Input Fields</label>
         <div class="form-group">
@@ -48,7 +48,7 @@
                 <input type="text" id="formFields_mask2" placeholder="999.999.999.999" clr-mask="99?9?.99?9?.99?9?.99?9?" [(ngModel)]="inputValue" name="inputValueName" size="45">
             </form>
         </div-->
-    </section>
+    <!--/section>
 </form>
 
 <pre>
@@ -88,4 +88,11 @@
         &lt;/section&gt;
     &lt;/form&gt;
     </code>
-</pre>
+</pre-->
+<form>
+    <div>
+        <input type="text" [(ngModel)]="actionType" name="actionType" placeholder="action type">
+    </div>
+    <button class="btn btn-primary" (click)="opened = true">Show modal</button>
+    <request-action [(isOpen)]="opened" [action]="actionType"></request-action>
+</form>
