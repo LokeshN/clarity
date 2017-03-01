@@ -42,6 +42,9 @@ export class RequestActionComponent implements OnChanges {
                     this.component = this.clrModalContent.createComponent(componentFactory);
                     this.component._component.validate();
                     this.clrModalDialog.open();
+                } else {
+                    this.clrModalContent.clear();
+                    this.clrModalDialog.open();
                 }
             }
         }

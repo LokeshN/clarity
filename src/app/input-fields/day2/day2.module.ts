@@ -4,8 +4,8 @@ import {ClarityModule} from "../../../clarity-angular";
 import {RequestActionComponent} from "./request-action.component";
 import {ActionFormRendererFactory} from "./renderers/action-form-renderer-factory";
 import {ActionFormRendererContext} from "./renderers/action-form-renderer-context";
-import {ActionToContextMapper, ActionToFormMapper,
-        ContextToRendererMapper} from "./renderers/mappers";
+import {ContextMapper} from "./renderers/context-mapper";
+import {APP_CONFIG, CONFIG} from "./renderers/config";
 import {ScaleInActionComponent} from "./actions/scalein-action.component";
 import {ScaleOutActionComponent} from "./actions/scaleout-action.component";
 import {DynamicRowDataMapper} from "./actions/dynamic/dynamic-row-data-mapper";
@@ -27,10 +27,9 @@ import {DynamicComponent} from "./actions/dynamic/dynamic-component";
     providers: [
         ActionFormRendererFactory,
         ActionFormRendererContext,
-        ActionToContextMapper,
-        ActionToFormMapper,
-        ContextToRendererMapper,
-        DynamicRowDataMapper
+        ContextMapper,
+        DynamicRowDataMapper,
+        {provide: APP_CONFIG, useValue: CONFIG}
     ],
     exports: [
         RequestActionComponent
