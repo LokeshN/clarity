@@ -10,27 +10,38 @@ export class Context {
     static FORMLESS: string = "FORMLESS";
 }
 
+export interface IConfig {
+    name: string;
+    id: string;
+    context: string;
+    view?: any;
+}
 
-export const CONFIG = {
-    "SCALE_IN": {
-                    name: "SCALE IN",
-                    id: "SCALE_IN",
-                    context: Context.STATIC,
-                    view: ScaleInActionComponent
-                },
-    "SCALE_OUT": {
-                     name: "SCALE OUT",
-                     id: "SCALE_OUT",
-                     context: Context.STATIC,
-                     view: ScaleOutActionComponent
-                 },
-    "CHANGE_LEASE": {
-                        name: "CHANGE LEASE",
-                        id: "CHANGE_LEASE",
-                        context: Context.DYNAMIC,
-                        view: DynamicLayoutComponent
-                    }
 
-};
+export const CONFIG: Array<IConfig> = [
+    {
+        name: "SCALE IN",
+        id: "SCALE_IN",
+        context: Context.STATIC,
+        view: ScaleInActionComponent
+    },
+    {
+        name: "SCALE OUT",
+        id: "SCALE_OUT",
+        context: Context.STATIC,
+        view: ScaleOutActionComponent
+    },
+    {
+        name: "CHANGE LEASE",
+        id: "CHANGE_LEASE",
+        context: Context.DYNAMIC,
+        view: DynamicLayoutComponent
+    },
+    {
+        name: "SHUTDOWN",
+        id: "SHUTDOWN",
+        context: Context.FORMLESS
+    }
+];
 
 export let APP_CONFIG = new OpaqueToken("app.config");

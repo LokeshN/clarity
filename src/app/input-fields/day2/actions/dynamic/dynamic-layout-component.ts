@@ -1,6 +1,5 @@
-import {Component, Injector, OnInit} from "@angular/core";
+import {Component, Injector} from "@angular/core";
 
-import {ActionFormRendererContext} from "../../renderers/action-form-renderer-context";
 import {DynamicRowDataMapper} from "./dynamic-row-data-mapper";
 import {DynamicComponentModel} from "./dynamic-component-model";
 import {BaseActionComponent} from "../base-action.component";
@@ -10,15 +9,13 @@ import {BaseActionComponent} from "../base-action.component";
     moduleId: module.id,
     templateUrl: "./dynamic-template.html"
 })
-export class DynamicLayoutComponent extends BaseActionComponent implements OnInit {
-    private context: ActionFormRendererContext;
+export class DynamicLayoutComponent extends BaseActionComponent {
     private rowDataMapper: DynamicRowDataMapper;
     public components: DynamicComponentModel[];
 
-    constructor(private injector: Injector) {
-        super();
-        this.context = this.injector.get(ActionFormRendererContext);
-        this.rowDataMapper = this.injector.get(DynamicRowDataMapper);
+    constructor(injector: Injector) {
+        super(injector);
+        this.rowDataMapper = this.getComponent(DynamicRowDataMapper);
     }
 
     ngOnInit() {

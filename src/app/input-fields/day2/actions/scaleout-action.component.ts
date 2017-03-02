@@ -10,9 +10,7 @@ import {BaseActionComponent} from "./base-action.component";
 })
 export class ScaleOutActionComponent extends BaseActionComponent {
 
-    //private context: ActionFormRendererContext;
-
-    constructor(private injector: Injector) {
-        super();
+    constructor(injector: Injector) {
+        super(injector);
     }
 }

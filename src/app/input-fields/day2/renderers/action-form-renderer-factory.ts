@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 
 import {IRenderer} from "./IRenderer";
 import {ActionFormRendererContext} from "./action-form-renderer-context";
-import {ContextMapper} from "./context-mapper";
+import {ContextConfigMapper} from "./context-config-mapper";
 import {StaticActionFormRenderer} from "./static-action-form-renderer";
 import {DynamicActionFormRenderer} from "./dynamic-action-form-renderer";
 import {Context} from "./config";
@@ -10,7 +10,7 @@ import {Context} from "./config";
 @Injectable()
 export class ActionFormRendererFactory {
     constructor (private context: ActionFormRendererContext,
-                 private mapper: ContextMapper) {}
+                 private mapper: ContextConfigMapper) {}
 
     public getRenderer(action: string): IRenderer {
         let type: string = this.mapper.getRendererTypeBasedOnAction(action);
@@ -20,7 +20,7 @@ export class ActionFormRendererFactory {
             case Context.DYNAMIC:
                 return new DynamicActionFormRenderer(this.context, this.mapper);
             default:
-                return null;
+                return new StaticActionFormRenderer(this.context, this.mapper);
         }
    }
 }

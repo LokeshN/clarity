@@ -4,8 +4,10 @@ import {ClarityModule} from "../../../clarity-angular";
 import {RequestActionComponent} from "./request-action.component";
 import {ActionFormRendererFactory} from "./renderers/action-form-renderer-factory";
 import {ActionFormRendererContext} from "./renderers/action-form-renderer-context";
-import {ContextMapper} from "./renderers/context-mapper";
+import {ContextConfigMapper} from "./renderers/context-config-mapper";
+import {ConfigEnhancer} from "./renderers/config-enhancer";
 import {APP_CONFIG, CONFIG} from "./renderers/config";
+import {BaseActionComponent} from "./actions/base-action.component";
 import {ScaleInActionComponent} from "./actions/scalein-action.component";
 import {ScaleOutActionComponent} from "./actions/scaleout-action.component";
 import {DynamicRowDataMapper} from "./actions/dynamic/dynamic-row-data-mapper";
@@ -19,6 +21,7 @@ import {DynamicComponent} from "./actions/dynamic/dynamic-component";
     ],
     declarations: [
         RequestActionComponent,
+        BaseActionComponent,
         ScaleInActionComponent,
         ScaleOutActionComponent,
         DynamicLayoutComponent,
@@ -27,14 +30,16 @@ import {DynamicComponent} from "./actions/dynamic/dynamic-component";
     providers: [
         ActionFormRendererFactory,
         ActionFormRendererContext,
-        ContextMapper,
+        ContextConfigMapper,
         DynamicRowDataMapper,
-        {provide: APP_CONFIG, useValue: CONFIG}
+        {provide: APP_CONFIG, useValue: CONFIG},
+        ConfigEnhancer
     ],
     exports: [
         RequestActionComponent
     ],
     entryComponents: [
+        BaseActionComponent,
         ScaleInActionComponent,
         ScaleOutActionComponent,
         DynamicLayoutComponent
