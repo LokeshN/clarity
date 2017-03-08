@@ -1,7 +1,7 @@
 import {OpaqueToken} from "@angular/core";
 
-import {ScaleInActionComponent} from "../actions/scalein-action.component";
-import {ScaleOutActionComponent} from "../actions/scaleout-action.component";
+//import {ScaleInActionComponent} from "../actions/scalein-action.component";
+//import {ScaleOutActionComponent} from "../actions/scaleout-action.component";
 import {DynamicLayoutComponent} from "../actions/dynamic/dynamic-layout-component";
 
 export class Context {
@@ -17,9 +17,8 @@ export interface IConfig {
     view?: any;
 }
 
-
 export const CONFIG: Array<IConfig> = [
-    {
+    /*{
         name: "SCALE IN",
         id: "SCALE_IN",
         context: Context.STATIC,
@@ -30,7 +29,7 @@ export const CONFIG: Array<IConfig> = [
         id: "SCALE_OUT",
         context: Context.STATIC,
         view: ScaleOutActionComponent
-    },
+    },*/
     {
         name: "CHANGE LEASE",
         id: "CHANGE_LEASE",
@@ -43,5 +42,11 @@ export const CONFIG: Array<IConfig> = [
         context: Context.FORMLESS
     }
 ];
+
+export function Register(config: any) {
+    return function (target: Function) {
+        CONFIG.push(config);
+    };
+}
 
 export let APP_CONFIG = new OpaqueToken("app.config");
