@@ -7,8 +7,7 @@ import {Register, Context} from "../renderers/config";
 @Register({
         name: "SCALE OUT",
         id: "SCALE_OUT",
-        context: Context.STATIC,
-        view: ScaleOutActionComponent
+        context: Context.STATIC
     })
 @Component({
     moduleId: module.id,

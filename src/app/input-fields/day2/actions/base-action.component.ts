@@ -1,6 +1,7 @@
-import {Component, Injector, OnInit} from "@angular/core";
+import {Component, Injector, OnInit, ComponentFactoryResolver} from "@angular/core";
 
 import {ActionFormRendererContext} from "../renderers/action-form-renderer-context";
+import {ContextConfigMapper} from "../renderers/context-config-mapper";
 
 @Component({
     moduleId : module.id,
@@ -25,6 +26,14 @@ export class BaseActionComponent implements OnInit {
 
     getComponent(component: any): any {
         return this.injector.get(component);
+    }
+
+    getComponentFactoryResolver(): ComponentFactoryResolver {
+        return this.injector.get(ComponentFactoryResolver);
+    }
+
+    getContextConfigMapper(): ContextConfigMapper {
+        return this.injector.get(ContextConfigMapper);
     }
 
 }

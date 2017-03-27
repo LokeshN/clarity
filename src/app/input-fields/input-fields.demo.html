@@ -91,7 +91,10 @@
 </pre-->
 <form>
     <div>
-        <input type="text" [(ngModel)]="actionType" name="actionType" placeholder="action type">
+        Parent Factory: <input type="text" [(ngModel)]="actionType" name="actionType" placeholder="action type">
+    </div>
+     <div>
+        Child Factory of Parent: <input type="text" placeholder="sub action type" value="VSPHERE">
     </div>
     <button class="btn btn-primary" (click)="opened = true">Show modal</button>
     <request-action [(isOpen)]="opened" [action]="actionType"></request-action>

@@ -26,6 +26,10 @@ export class RequestActionComponent implements OnChanges {
                  private componentFactoryResolver: ComponentFactoryResolver,
                  private context: ActionFormRendererContext) {
 
+        context.contextData = {
+                                subAction: "VSPHERE"
+                              };
+
     }
 
     ngOnChanges(changes: SimpleChanges) {

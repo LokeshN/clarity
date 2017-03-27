@@ -9,6 +9,7 @@ import {ConfigEnhancer} from "./renderers/config-enhancer";
 import {APP_CONFIG, CONFIG} from "./renderers/config";
 import {BaseActionComponent} from "./actions/base-action.component";
 import {ScaleInActionComponent} from "./actions/scalein-action.component";
+import {VSphereMachineComponent} from "./actions/machines/vsphere-machine.component";
 import {ScaleOutActionComponent} from "./actions/scaleout-action.component";
 import {DynamicRowDataMapper} from "./actions/dynamic/dynamic-row-data-mapper";
 import {DynamicLayoutComponent} from "./actions/dynamic/dynamic-layout-component";
@@ -23,6 +24,7 @@ import {DynamicComponent} from "./actions/dynamic/dynamic-component";
         RequestActionComponent,
         BaseActionComponent,
         ScaleInActionComponent,
+        VSphereMachineComponent,
         ScaleOutActionComponent,
         DynamicLayoutComponent,
         DynamicComponent
@@ -41,6 +43,7 @@ import {DynamicComponent} from "./actions/dynamic/dynamic-component";
     entryComponents: [
         BaseActionComponent,
         ScaleInActionComponent,
+        VSphereMachineComponent,
         ScaleOutActionComponent,
         DynamicLayoutComponent
     ]

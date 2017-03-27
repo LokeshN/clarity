@@ -17,6 +17,10 @@ export class StaticActionFormRenderer implements IRenderer {
         return this.mapper.getRendererFormBasedOnAction(action);
     }
 
+    getChildComponent(parentAction: string, childAction: string): any {
+        return this.mapper.getChildRendererFormBasedOnAction(parentAction, childAction);
+    }
+
     private setContextData(): void {
         //should be changed to call operations on a reducer in redux;
         this.context.contextData = {
@@ -25,7 +29,8 @@ export class StaticActionFormRenderer implements IRenderer {
             titleImgSrc: "http://test.com",
             contentData: {
                 test: "LOKN"
-            }
+            },
+            subAction: "VSPHERE"
         };
     }
 

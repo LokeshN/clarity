@@ -17,6 +17,10 @@ export class DynamicActionFormRenderer implements IRenderer {
         return this.mapper.getRendererFormBasedOnAction(action);
     }
 
+    getChildComponent(parentAction: string, childAction: string): any {
+
+    }
+
     private setLayoutData() {
         //call the layout form REST and set the layout to the context
         this.context.layout = {};
