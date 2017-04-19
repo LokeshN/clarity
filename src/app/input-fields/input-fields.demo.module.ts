@@ -10,6 +10,13 @@ import {ROUTING} from "./input-fields.demo.routing";
 import {InputFieldsDemo} from "./input-fields.demo";
 import {FormsModule} from "@angular/forms";
 import {Day2Module} from "./day2/day2.module";
+import {ProviderUIModule} from "./ui-factory/provider-ui.module";
+import {RendererFactory} from "./ui-factory/utils/RendererFactory";
+import {RendererUtil} from "./ui-factory/utils/RendererUtil";
+import {Registry} from "./ui-factory/registry/Registry";
+import {MainComponent} from "./test/main.component";
+import {ScaleInComponent} from "./test/scalein.component";
+import {VsphereComponent} from "./test/vsphere.component";
 
 @NgModule({
     imports: [
@@ -17,13 +24,26 @@ import {Day2Module} from "./day2/day2.module";
         ClarityModule,
         ROUTING,
         Day2Module,
-        FormsModule
+        FormsModule,
+        ProviderUIModule
     ],
     declarations: [
-        InputFieldsDemo
+        InputFieldsDemo,
+        MainComponent,
+        ScaleInComponent,
+        VsphereComponent
+    ],
+    providers: [
+        RendererFactory,
+        RendererUtil,
+        Registry
     ],
     exports: [
         InputFieldsDemo
+    ],
+    entryComponents: [
+        ScaleInComponent,
+        VsphereComponent
     ]
 })
 export default class InputFieldsDemoModule {
