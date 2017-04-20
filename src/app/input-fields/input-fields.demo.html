@@ -89,14 +89,21 @@
     &lt;/form&gt;
     </code>
 </pre-->
+<div style="padding-bottom: 25px;">
+<h1> Sample 1 with only the Registry Framework</h1>
 <main></main>
-<!--form>
+</div>
+
+<hr>
+
+<h1> Sample 2 for Catalog Form/ Formless/ Extension Forms Day 2 Actions</h1>
+<form>
     <div>
-        Parent Factory: <input type="text" [(ngModel)]="actionType" name="actionType" placeholder="action type">
+        FormType : <input type="text" [(ngModel)]="formType" name="formType" placeholder="Form type">
     </div>
-     <div>
-        Child Factory of Parent: <input type="text" placeholder="sub action type" value="VSPHERE">
-    </div>
-    <button class="btn btn-primary" (click)="opened = true">Show modal</button>
-    <request-action [(isOpen)]="opened" [action]="actionType"></request-action>
-</form-->
+     <!--div>
+        Child for Parent: <input type="text" placeholder="sub action type" value="VSPHERE">
+    </div-->
+    <button class="btn btn-primary" (click)="opened = true">Show Form</button>
+    <request-action [(isOpen)]="opened" [formType]="formType"></request-action>
+</form>

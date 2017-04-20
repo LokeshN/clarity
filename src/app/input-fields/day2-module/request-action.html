@@ -1,0 +1,11 @@
+<clr-modal #clrModalDialog [clrModalOpen]="isOpen"
+                           (clrModalOpenChange)="onModalOpenChange($event)">
+    <h3 class="modal-title">{{title}}</h3>
+    <div #clrModalContent class="modal-body">
+        <!-- Content goes here -->
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="opened = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="opened = false">Ok</button>
+    </div>
+</clr-modal>

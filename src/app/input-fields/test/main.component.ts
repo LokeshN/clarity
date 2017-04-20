@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild, ViewContainerRef} from "@angular/core";
-import {RendererUtil} from "../ui-factory/utils/RendererUtil";
+import {RendererUtil} from "../common-registry/utils/RendererUtil";
 //import {RendererFactory} from "../ui-factory/utils/RendererFactory";
 //import {Registry} from "../ui-factory/registry/Registry";
 

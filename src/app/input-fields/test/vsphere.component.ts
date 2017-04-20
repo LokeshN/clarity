@@ -1,16 +1,18 @@
 import {Component} from "@angular/core";
-import {Register} from "../ui-factory/registry/Registry";
+import {Register} from "../common-registry/registry/Registry";
+import {ScaleInComponent} from "./scalein.component";
 
 @Register({
-    id: "VSPHERE",
-    parentId: "SCALE_IN"
+    id: VsphereComponent.ID,
+    parentId: ScaleInComponent.ID
 })
 @Component({
     moduleId: module.id,
     template: `
-        <h2> VSPHERE </h2>
+        <h3> VSPHERE </h3>
     `
 })
 export class VsphereComponent {
+    public static ID: string = "VSPHERE";
 
 }

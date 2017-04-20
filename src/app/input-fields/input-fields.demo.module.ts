@@ -9,11 +9,11 @@ import {ClarityModule} from "../../clarity-angular";
 import {ROUTING} from "./input-fields.demo.routing";
 import {InputFieldsDemo} from "./input-fields.demo";
 import {FormsModule} from "@angular/forms";
-import {Day2Module} from "./day2/day2.module";
-import {ProviderUIModule} from "./ui-factory/provider-ui.module";
-import {RendererFactory} from "./ui-factory/utils/RendererFactory";
-import {RendererUtil} from "./ui-factory/utils/RendererUtil";
-import {Registry} from "./ui-factory/registry/Registry";
+import {Day2Module} from "./day2-module/day2.module";
+import {CommonRegistryModule} from "./common-registry/common-registry.module";
+import {RendererFactory} from "./common-registry/utils/RendererFactory";
+import {RendererUtil} from "./common-registry/utils/RendererUtil";
+import {Registry} from "./common-registry/registry/Registry";
 import {MainComponent} from "./test/main.component";
 import {ScaleInComponent} from "./test/scalein.component";
 import {VsphereComponent} from "./test/vsphere.component";
@@ -25,7 +25,7 @@ import {VsphereComponent} from "./test/vsphere.component";
         ROUTING,
         Day2Module,
         FormsModule,
-        ProviderUIModule
+        CommonRegistryModule
     ],
     declarations: [
         InputFieldsDemo,

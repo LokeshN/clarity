@@ -18,7 +18,7 @@ import {RendererUtil} from "./utils/RendererUtil";
     exports: [
     ]
 })
-export class ProviderUIModule {
+export class CommonRegistryModule {
 
 
 }

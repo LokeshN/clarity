@@ -1,7 +1,8 @@
-
+/*
+ * Interface to store the configurations objects in the registry
+ */
 export interface IConfig {
     id: any;
-    context?: string;
     view?: any;
     children?: IConfig[];
 }

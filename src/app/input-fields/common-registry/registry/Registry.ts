@@ -39,7 +39,7 @@ export function Register(registerConfig: IRegisterConfig) {
                 id: registerConfig.id,
                 view: target
             };
-        let config: PrivateRegistry = _registry.getConfig();
+        let config: Array<IConfig> = _registry.getConfig();
         if (registerConfig.parentId) {
             //loop and find
             let parentConfig: IConfig = findParent(registerConfig.parentId, config);
@@ -67,7 +67,7 @@ export class Registry {
     }
 
     public getComponentRef(type: any, parentType?: any): any {
-        return this.registry.getComponentRefInternal(type, parentType, this.getConfig(), null);
+        return this.registry.getComponentRef(type, parentType);
     }
 
 }
@@ -104,7 +104,7 @@ class PrivateRegistry {
         return PrivateRegistry.registry;
     }
 
-    //Non-performant usual DFS, need to check if there is any efficient way.
+    //Usual DFS, need to check if there is any efficient way.
     private getComponentRefInternal(type: any, parentType: any,
                                     configList: Array<IConfig>, parentConfig: IConfig): any {
        if (!type || !configList || configList.length === 0) {
@@ -120,8 +120,13 @@ class PrivateRegistry {
            return null;
        }
 
+
        for (let i = 0;  i < configList.length; i++) {
-           return this.getComponentRefInternal(type, parentType, configList[i].children, configList[i]);
+           let componentRef: any = this.getComponentRefInternal(type,
+                                        parentType, configList[i].children, configList[i]);
+           if (componentRef) {
+               return componentRef;
+           }
        }
     }
 }

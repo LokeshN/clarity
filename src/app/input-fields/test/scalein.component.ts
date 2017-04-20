@@ -1,18 +1,20 @@
 import {Component, OnInit, ViewChild, ViewContainerRef} from "@angular/core";
-import {Register} from "../ui-factory/registry/Registry";
-import {RendererUtil} from "../ui-factory/utils/RendererUtil";
+import {Register} from "../common-registry/registry/Registry";
+import {RendererUtil} from "../common-registry/utils/RendererUtil";
 
 @Register({
-        id: "SCALE_IN"
+        id: ScaleInComponent.ID
     })
 @Component({
     moduleId: module.id,
     template: `
-        <H1> Scale IN</H1>
-        <div #view></div>
+        <H2> Scale IN</H2>
+        <div style="height:35px" #view></div>
     `
 })
 export class ScaleInComponent implements OnInit {
+
+    public static ID: string = "SCALE_IN";
 
     constructor(private rendererUtil: RendererUtil) {
     }
@@ -21,6 +23,6 @@ export class ScaleInComponent implements OnInit {
 
     ngOnInit() {
         //let rendererUtil: RendererUtil = new RendererUtil(new RendererFactory(new Registry()));
-        this.rendererUtil.renderComponent(this.viewDiv, "VSPHERE", "SCALE_IN");
+        this.rendererUtil.renderComponent(this.viewDiv, "VSPHERE", ScaleInComponent.ID);
     }
 }
