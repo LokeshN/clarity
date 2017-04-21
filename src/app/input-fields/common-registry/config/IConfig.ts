@@ -5,4 +5,5 @@ export interface IConfig {
     id: any;
     view?: any;
     children?: IConfig[];
+    contextAliases?: Array<any>;
 }

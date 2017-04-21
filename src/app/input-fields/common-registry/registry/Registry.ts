@@ -37,7 +37,8 @@ export function Register(registerConfig: IRegisterConfig) {
     return function (target: Function) {
         let configObj: IConfig = {
                 id: registerConfig.id,
-                view: target
+                view: target,
+                contextAliases: registerConfig.contextAliases
             };
         let config: Array<IConfig> = _registry.getConfig();
         if (registerConfig.parentId) {
@@ -113,7 +114,9 @@ class PrivateRegistry {
 
        if (!parentType || (parentConfig && CommonUtil.checkObjectEquals(parentType, parentConfig.id))) {
            for (let i = 0;  i < configList.length; i++) {
-               if (CommonUtil.checkObjectEquals(type, configList[i].id)) {
+               if (CommonUtil.checkObjectEquals(type, configList[i].id) ||
+                   (configList[i].contextAliases &&
+                       CommonUtil.checkArrayContains(configList[i].contextAliases, type))) {
                    return configList[i].view;
                }
            }

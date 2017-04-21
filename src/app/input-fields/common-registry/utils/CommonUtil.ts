@@ -18,6 +18,22 @@ export class CommonUtil {
         return false;
     }
 
+    /**
+     * Checks if Array contains the object passed in the params
+     */
+    public static checkArrayContains(array: Array<any>, object: any): boolean {
+        for (let i = 0; i < array.length; i++) {
+            let object1: any = array[i];
+            if (typeof object1 === "string" && typeof object === "string") {
+                return object1 === object;
+            } else if (CommonUtil.isObject(object1) && CommonUtil.isObject(object)) {
+                return Object.keys(object1).length === Object.keys(object).length &&
+                       CommonUtil.compareKeys(object1, object);
+            }
+        }
+        return false;
+    }
+
     private static compareKeys(object1: any, object2: any): boolean {
         //loop and compare each property
         for (let prop in object1) {

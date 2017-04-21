@@ -4,7 +4,8 @@ import {BaseRequestComponent} from "./base-request.component";
 import {Register} from "../../common-registry/registry/Registry";
 
 @Register({
-    id: FormlessRequestComponent.ID
+    id: FormlessRequestComponent.ID,
+    contextAliases: FormlessRequestComponent.ALIASES
 })
 @Component({
     moduleId: module.id,
@@ -12,4 +13,6 @@ import {Register} from "../../common-registry/registry/Registry";
 })
 export class FormlessRequestComponent extends BaseRequestComponent {
     public static ID: string = "FORM_LESS";
+
+    public static ALIASES: Array<any> = ["SHUTDOWN", "POWEROFF", "REBOOT"];
 }

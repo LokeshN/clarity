@@ -5,4 +5,5 @@
 export interface IRegisterConfig {
     id: any;
     parentId?: any;
+    contextAliases?: Array<any>;
 }
