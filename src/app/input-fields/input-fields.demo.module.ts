@@ -16,7 +16,10 @@ import {RendererUtil} from "./common-registry/utils/RendererUtil";
 import {Registry} from "./common-registry/registry/Registry";
 import {MainComponent} from "./test/main.component";
 import {ScaleInComponent} from "./test/scalein.component";
+import {ScaleOutComponent} from "./test/scaleout.component";
 import {VsphereComponent} from "./test/vsphere.component";
+import {AwsComponent} from "./test/aws.component";
+import {AzureComponent} from "./test/azure.component";
 
 @NgModule({
     imports: [
@@ -31,7 +34,10 @@ import {VsphereComponent} from "./test/vsphere.component";
         InputFieldsDemo,
         MainComponent,
         ScaleInComponent,
-        VsphereComponent
+        ScaleOutComponent,
+        VsphereComponent,
+        AwsComponent,
+        AzureComponent
     ],
     providers: [
         RendererFactory,
@@ -43,7 +49,10 @@ import {VsphereComponent} from "./test/vsphere.component";
     ],
     entryComponents: [
         ScaleInComponent,
-        VsphereComponent
+        ScaleOutComponent,
+        VsphereComponent,
+        AwsComponent,
+        AzureComponent
     ]
 })
 export default class InputFieldsDemoModule {

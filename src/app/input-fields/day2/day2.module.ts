@@ -10,6 +10,8 @@ import {APP_CONFIG, CONFIG} from "./renderers/config";
 import {BaseActionComponent} from "./actions/base-action.component";
 import {ScaleInActionComponent} from "./actions/scalein-action.component";
 import {VSphereMachineComponent} from "./actions/machines/vsphere-machine.component";
+import {AwsMachineComponent} from "./actions/machines/aws-machine.component";
+import {AzureMachineComponent} from "./actions/machines/azure-machine.component";
 import {ScaleOutActionComponent} from "./actions/scaleout-action.component";
 import {DynamicRowDataMapper} from "./actions/dynamic/dynamic-row-data-mapper";
 import {DynamicLayoutComponent} from "./actions/dynamic/dynamic-layout-component";
@@ -25,6 +27,8 @@ import {DynamicComponent} from "./actions/dynamic/dynamic-component";
         BaseActionComponent,
         ScaleInActionComponent,
         VSphereMachineComponent,
+        AwsMachineComponent,
+        AzureMachineComponent,
         ScaleOutActionComponent,
         DynamicLayoutComponent,
         DynamicComponent
@@ -44,6 +48,8 @@ import {DynamicComponent} from "./actions/dynamic/dynamic-component";
         BaseActionComponent,
         ScaleInActionComponent,
         VSphereMachineComponent,
+        AwsMachineComponent,
+        AzureMachineComponent,
         ScaleOutActionComponent,
         DynamicLayoutComponent
     ]
